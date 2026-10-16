@@ -1,0 +1,113 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Heart Disease Prediction</title>
+  <link rel="stylesheet" href="/static/style.css">
+  <script src="/static/script.js" defer></script>
+</head>
+<body>
+  <main class="container">
+    <header>
+      <div class="heart-icon">♥</div>
+      <h1>Heart Disease Prediction</h1>
+      <p>Enter the health measurements to receive a model prediction.</p>
+    </header>
+
+    <form id="predictionForm">
+      <div class="form-grid">
+        <label>Age
+          <input type="number" name="age" min="1" max="120" required>
+        </label>
+
+        <label>Sex
+          <select name="sex" required>
+            <option value="1">Male (1)</option>
+            <option value="0">Female (0)</option>
+          </select>
+        </label>
+
+        <label>Chest Pain Type (cp)
+          <select name="cp" required>
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+          </select>
+        </label>
+
+        <label>Resting Blood Pressure
+          <input type="number" name="trestbps" min="1" max="300" required>
+        </label>
+
+        <label>Cholesterol
+          <input type="number" name="chol" min="0" max="1000" required>
+        </label>
+
+        <label>Fasting Blood Sugar (fbs)
+          <select name="fbs" required>
+            <option value="0">0 - False</option>
+            <option value="1">1 - True</option>
+          </select>
+        </label>
+
+        <label>Resting ECG (restecg)
+          <select name="restecg" required>
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+          </select>
+        </label>
+
+        <label>Maximum Heart Rate (thalach)
+          <input type="number" name="thalach" min="1" max="300" required>
+        </label>
+
+        <label>Exercise-Induced Angina (exang)
+          <select name="exang" required>
+            <option value="0">0 - No</option>
+            <option value="1">1 - Yes</option>
+          </select>
+        </label>
+
+        <label>Oldpeak
+          <input type="number" name="oldpeak" min="-10" max="20"
+                 step="any" required>
+        </label>
+
+        <label>Slope
+          <select name="slope" required>
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+          </select>
+        </label>
+
+        <label>Major Vessels (ca)
+          <input type="number" name="ca" min="0" max="4" step="any" required>
+        </label>
+
+        <label>Thal
+          <input type="number" name="thal" min="0" max="7" step="1" required>
+        </label>
+      </div>
+
+      <button id="predictButton" type="submit">Predict</button>
+      <p id="status" role="status" aria-live="polite"></p>
+    </form>
+
+    <section id="result" hidden aria-live="polite">
+      <h2>Prediction Result</h2>
+      <p id="resultText"></p>
+      <p id="probability"></p>
+      <small>
+        This educational model cannot diagnose heart disease. Consult a
+        qualified healthcare professional for medical advice.
+      </small>
+    </section>
+  </main>
+</body>
+</html>
